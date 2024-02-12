@@ -1,0 +1,19 @@
+.card {
+    width: 100%;
+}
+
+
+// Styles for cards
+.machineCard {
+    border: 1px solid #ccc;
+    margin-bottom: $card-margin; // Отступ между карточками
+    box-sizing: border-box;
+    width: calc(100% / 3 - #{$card-margin * 2}); // Размер карточки на компьютере
+    float: left; // Выстраиваем карточки в ряд на компьютере
+    margin-right: $card-margin; // Отступ между карточками на компьютере
+
+    // Отменяем правила для карточек на телефоне
+    @media screen and (max-width: 768px) {
+        width: calc(100% / 2 - #{$card-margin * 2}); // Размер карточки на телефоне
+    }
+}
