@@ -50,32 +50,6 @@ display: flex;
                 margin-right: 10px;
             }
         }
-        width: 100%; // By default, list items will take up the full available width
-
-        @media screen and (min-width: 768px) { // Media query for mobile devices
-            width: auto; // Switches items to auto width (takes up only necessary space)
-            flex: 1 0 50%; // Sets item width to 50% on mobile devices
-        }
-
-        &.navbar-search { // Styles for the search block
-            flex-basis: 100%; // Takes up full available width
-            margin-right: 0; // Removes margin to take up full width
-            margin-top: 10px; // Adds a small margin at the top
-
-            @media screen and (min-width: 768px) { // Media query for mobile devices
-                flex-basis: auto; // Resets width to auto for mobile devices
-                flex: 1 0 auto; // Allows the block to take up available space
-                margin-top: 0; // Removes top margin on mobile devices
-            }
-
-            input[type="text"] {
-                width: calc(100% - 40px); // Sets width for the text input field with consideration for the search button
-            }
-
-            button {
-                margin-left: 10px; // Adds margin between the text input field and the search button
-            }
-        }
     }
 }
 .content {

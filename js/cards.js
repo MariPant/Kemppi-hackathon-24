@@ -1,3 +1,4 @@
+
 // Use window.onload to ensure the DOM is fully loaded
 window.onload = function() {
     var contentSection = document.getElementById('content');

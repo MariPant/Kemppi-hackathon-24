@@ -14,11 +14,10 @@
     margin-right: $card-margin; // Margin between cards
     border-radius: $border-radius;
     background-color: #ffffff; // Background color
-    border-radius: 10px; // Rounded corners
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Box shadow for a subtle elevation effect
-    padding: 20px; // Padding around the card content
-    margin: 10px; // Margin between cards
-    max-width: 300px; // Fixed width for the cards (you can adjust this as needed)
+    padding: 30px; // Padding around the card content
+    margin: 20px; // Margin between cards
+    max-width: 350px; // Fixed width for the cards (you can adjust this as needed)
 
     // Override rules for cards on mobile
     @media screen and (max-width: 768px) {
