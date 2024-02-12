@@ -1,19 +1,52 @@
-.card {
-    width: 100%;
-}
 
+
+.card {
+    width: 50%;
+}
 
 // Styles for cards
 .machineCard {
-    border: 1px solid #ccc;
-    margin-bottom: $card-margin; // Отступ между карточками
-    box-sizing: border-box;
-    width: calc(100% / 3 - #{$card-margin * 2}); // Размер карточки на компьютере
-    float: left; // Выстраиваем карточки в ряд на компьютере
-    margin-right: $card-margin; // Отступ между карточками на компьютере
+    border: 1px solid #ccc; // Border for each card
+    margin-bottom: $card-margin; // Margin between cards
+    box-sizing: border-box; // Include border in the width calculation
+    width: calc(50% - #{$card-margin * 2}); // Card width for two columns
+    float: left; // Arrange cards in a row
+    margin-right: $card-margin; // Margin between cards
+    border-radius: $border-radius;
+    background-color: #ffffff; // Background color
+    border-radius: 10px; // Rounded corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Box shadow for a subtle elevation effect
+    padding: 20px; // Padding around the card content
+    margin: 10px; // Margin between cards
+    max-width: 300px; // Fixed width for the cards (you can adjust this as needed)
 
-    // Отменяем правила для карточек на телефоне
+    // Override rules for cards on mobile
     @media screen and (max-width: 768px) {
-        width: calc(100% / 2 - #{$card-margin * 2}); // Размер карточки на телефоне
+        width: calc(100% - #{$card-margin * 2}); // Card width for one column on mobile
     }
+}
+
+
+// Styles for images in cards
+.productImage {
+    width: 100%; // Image width to fill its container
+    height: auto; // Auto height to maintain aspect ratio
+    border-radius: $border-radius; // Rounded corners for images
+}
+
+// Styles for text content in cards
+.productDataText {
+    padding: 10px; // Padding around text content
+}
+
+// Styles for "Remove" button in cards
+.removeButton {
+    text-align: center; // Center align the button text
+    margin-top: 10px; // Margin top for the button
+    border-radius: $border-radius; // Rounded corners for the button
+}
+
+// Styles for additional information in cards
+.showHideDiv {
+    padding: 10px; // Padding around additional information
 }

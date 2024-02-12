@@ -23,26 +23,60 @@ display: flex;
     }
 }
 .navbar {
-    margin-top: auto;
-    margin-bottom: 0; 
+    display: flex;
+    align-items: center;
     height: 10vh;
-    width: 100%;
     background-color: $color-grey2;
 
-    &-buttons {
-        margin: auto;
+    .navbar-buttons-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        width: 80%;
-        &-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+
+        .navbar-search {
+            margin-left: 115vh; // Pushes the search field and button to the right
             display: flex;
-            flex-direction: row;
+            align-items: center;
         }
-    }  
+
+        li {
+            margin: 30px;
+            align-items: center;
+            justify-content: space-between;
+
+            &:last-child {
+                margin-right: 10px;
+            }
+        }
+        width: 100%; // By default, list items will take up the full available width
+
+        @media screen and (min-width: 768px) { // Media query for mobile devices
+            width: auto; // Switches items to auto width (takes up only necessary space)
+            flex: 1 0 50%; // Sets item width to 50% on mobile devices
+        }
+
+        &.navbar-search { // Styles for the search block
+            flex-basis: 100%; // Takes up full available width
+            margin-right: 0; // Removes margin to take up full width
+            margin-top: 10px; // Adds a small margin at the top
+
+            @media screen and (min-width: 768px) { // Media query for mobile devices
+                flex-basis: auto; // Resets width to auto for mobile devices
+                flex: 1 0 auto; // Allows the block to take up available space
+                margin-top: 0; // Removes top margin on mobile devices
+            }
+
+            input[type="text"] {
+                width: calc(100% - 40px); // Sets width for the text input field with consideration for the search button
+            }
+
+            button {
+                margin-left: 10px; // Adds margin between the text input field and the search button
+            }
+        }
+    }
 }
 .content {
     height: auto;
@@ -53,7 +87,43 @@ display: flex;
         justify-content: center;
         display: flex;
         &-card {
-            .p {justify-content: center;}
+            background-color: #ffffff; // Background color
+            border-radius: 10px; // Rounded corners
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Box shadow for a subtle elevation effect
+            padding: 20px; // Padding around the card content
+            margin: 10px; // Margin between cards
+            max-width: 1200px; // Fixed width for the cards (you can adjust this as needed)
+            
+            // If you want to apply styles to the text inside the card:
+            h3 {
+                font-size: 18px; // Example style for heading
+                margin-bottom: 10px; // Example margin for heading
+            }
+            p {
+                font-size: 14px; // Example style for paragraph
+                color: #414141; // Example color for paragraph text
+                line-height: 1.5; // Example line height for paragraph
+            }
+            
+            // If you want to apply styles to images inside the card:
+            .card-image {
+                max-width: 100%; // Ensure images don't exceed the card width
+                border-radius: 10px; // Rounded corners for images
+            }
+            
+            // If you want to apply styles to buttons inside the card:
+            button {
+                background-color: #3f993a; // Example background color for button
+                color: white; // Example text color for button
+                padding: 10px 20px; // Example padding for button
+                border: none; // Remove border from button
+                border-radius: 5px; // Rounded corners for button
+                cursor: pointer; // Change cursor to pointer on hover
+                transition: background-color 0.3s ease; // Smooth transition for background color change
+                &:hover {
+                    background-color: #3f993a; // Darker background color on hover
+                }
+            }
         }
     }
 }

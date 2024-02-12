@@ -1,5 +1,3 @@
-// script.js
-
 // Use window.onload to ensure the DOM is fully loaded
 window.onload = function() {
     var contentSection = document.getElementById('content');
@@ -37,7 +35,7 @@ window.onload = function() {
                         <p>${item.name}</p>
                         <p>${item.location}</p>`;
 
-                buttonDiv.innerHTML = '<button type="button">Remove</button>';
+                buttonDiv.innerHTML = '<button type="button" onclick="openCardDetails()">Details</button>';
 
                 additionalDiv.innerHTML = `
                 <p>${item.productNumber}</p>
@@ -46,4 +44,11 @@ window.onload = function() {
                 contentSection.appendChild(cardDiv);
             })
         })
+}
+
+// Function to open card details in a new window
+function openCardDetails() {
+    // Your logic to open a new window and display card details goes here
+    // You can use window.open() method to open a new window
+    // and display card details using the data stored in each card
 }
